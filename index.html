@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131b">
+  <title>CHESS ARENA</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">♞</span> CHESS <b>ARENA</b></a>
+    <div class="top-status"><span class="pulse"></span><span id="engine-status">Қозғалтқыш жүктелуде...</span></div>
+  </header>
+
+  <main class="layout">
+    <section class="game-panel">
+      <div class="player-card">
+        <div class="avatar">♟</div>
+        <div class="player-info"><strong>STOCKFISH 19</strong><small>Жасанды интеллект · Қара</small></div>
+        <span class="elo">AI</span>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board" id="board" aria-label="Шахмат тақтасы"></div>
+      </div>
+
+      <div class="player-card bottom-player">
+        <div class="avatar white-avatar">♙</div>
+        <div class="player-info"><strong>СЕН</strong><small>Ақ · Ойыншы</small></div>
+        <span class="elo">YOU</span>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-heading"><div><span class="eyebrow">ЖЕКЕ ОЙЫН</span><h1>Шахмат</h1></div><span class="live-dot">● LIVE</span></div>
+      <div class="status-box"><span class="status-icon">♜</span><div><small>ОЙЫН ЖАҒДАЙЫ</small><strong id="game-status">Жүріс сенде</strong></div></div>
+
+      <div class="section-label">ҚИЫНДЫҚ ДЕҢГЕЙІ</div>
+      <select id="difficulty" class="select">
+        <option value="8">Жеңіл · 8 depth</option>
+        <option value="12">Орташа · 12 depth</option>
+        <option value="16" selected>Қиын · 16 depth</option>
+        <option value="20">Өте қиын · 20 depth</option>
+        <option value="24">Максимум · 24 depth</option>
+      </select>
+      <p class="hint">Depth жоғары болған сайын бот ұзақ ойланып, тереңірек есептейді.</p>
+
+      <div class="section-label moves-title">ЖҮРІСТЕР ТАРИХЫ</div>
+      <div id="moves" class="moves-list"><div class="empty">Әзірге жүрістер жоқ</div></div>
+
+      <div class="actions">
+        <button id="undo" class="btn secondary">↶ Артқа</button>
+        <button id="restart" class="btn primary">Жаңа ойын</button>
+      </div>
+      <div class="engine-note"><span>⚡</span><div><b>Stockfish 19</b><small>WASM шахмат қозғалтқышы · Браузерде жұмыс істейді</small></div></div>
+    </aside>
+  </main>
+  <footer>© 2026 CHESS ARENA <span>HTML · CSS · JAVASCRIPT · STOCKFISH</span></footer>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "rolab-chess",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ROLAB CHESS - play chess against Stockfish",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "npm run build && http-server dist -p 8080 -c-1"
+  },
+  "dependencies": {
+    "chess.js": "^1.4.0",
+    "stockfish": "^19.0.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

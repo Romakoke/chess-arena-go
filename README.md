@@ -1,18 +1,19 @@
 # CHESS ARENA
 
-## Орнату
-1. Компьютерде Node.js орнатылған болуы керек.
-2. Осы буманы ашып, терминалда:
-   `npm.cmd install`
-3. Серверді іске қосу:
-   `npm.cmd start`
-4. Браузерден ашу: http://localhost:8080
+## Vercel арқылы жариялау
+1. ZIP-ті ашып, GitHub-та жаңа repository жасаңыз.
+2. Жоба файлдарын repository-ге жүктеңіз.
+3. Vercel → Add New → Project → GitHub repository таңдаңыз.
+4. Build Command: `npm run build`
+5. Output Directory: `dist`
+6. Deploy басыңыз.
 
-Егер PowerShell npm.ps1 қатесін берсе, `npm.cmd` командасын қолданыңыз.
+`vercel.json` осы баптауларды автоматты береді. Build кезінде Stockfish 19 Lite single-threaded JS және WASM файлдары `dist/engine/` ішіне көшіріледі. Браузер Worker-ді сол жерден жүктейді.
 
-## Ескерту
-Stockfish 19 lite single-threaded қозғалтқышы npm арқылы жүктеледі.
-Алғашқы іске қосқанда интернет қажет. Қозғалтқыштың JS және WASM файлдары
-`node_modules/stockfish/bin/` ішінде болуы керек.
+## Компьютерде іске қосу
+Node.js орнатылған терминалда:
+`npm.cmd install`
+`npm.cmd start`
+Содан кейін http://localhost:8080 ашыңыз.
 
-Stockfish — GPL-3.0 лицензиясымен таратылатын ашық бастапқы кодты жоба.
+Stockfish қозғалтқышы браузерде орындалады. Алғашқы жариялау кезінде Vercel npm пакеттерін орнатады.
